@@ -78,12 +78,82 @@
             font-weight: 300;
         }
         
+        .bot-section {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 1s ease-out 0.6s both;
+        }
+        
+        .bot-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .bot-logo {
+            font-size: 3em;
+            background: linear-gradient(45deg, #5865F2, #9932CC, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .bot-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 300;
+        }
+        
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 25px;
-            margin: 50px 0;
-            animation: slideUp 1s ease-out 0.6s both;
+            margin: 40px 0;
+        }
+        
+        .bot-nav {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .bot-nav a {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #5865F2 0%, #9932CC 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bot-nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .bot-nav a:hover::before {
+            left: 100%;
+        }
+        
+        .bot-nav a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
         }
         
         .feature {
@@ -129,45 +199,6 @@
             font-size: 1.1em;
         }
         
-        .nav {
-            margin: 50px 0;
-            animation: slideUp 1s ease-out 0.9s both;
-        }
-        
-        .nav a {
-            display: inline-block;
-            margin: 15px;
-            padding: 18px 35px;
-            background: linear-gradient(135deg, #5865F2 0%, #9932CC 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .nav a:hover::before {
-            left: 100%;
-        }
-        
-        .nav a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
-        }
         
         .footer {
             margin-top: 50px;
@@ -192,37 +223,87 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo">🎵 Denzy Music</div>
+        <div class="logo">🤖 Denzy Ecosystem</div>
         
         <div class="subtitle">
-            Premium Discord Bot - Music, Moderation & Security
+            Two Powerful Discord Bots for Your Server
         </div>
         
-        <div class="features">
-            <div class="feature">
-                <span class="feature-icon">🎵</span>
-                <h3>Music Streaming</h3>
-                <p>High-quality music from YouTube & Spotify</p>
+        <!-- Denzy Bot Section -->
+        <div class="bot-section">
+            <div class="bot-header">
+                <div class="bot-logo">🛡️ Denzy</div>
+                <div class="bot-subtitle">Server Management & Moderation Bot</div>
             </div>
-            <div class="feature">
-                <span class="feature-icon">🛡️</span>
-                <h3>Server Protection</h3>
-                <p>Advanced moderation & anti-raid systems</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">🎫</span>
+                    <h3>Ticket System</h3>
+                    <p>Advanced support ticket management with categories</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Guard Protection</h3>
+                    <p>Anti-raid, anti-spam and server security systems</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📊</span>
+                    <h3>Logging System</h3>
+                    <p>Comprehensive server activity and audit logs</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">⚖️</span>
+                    <h3>Moderation Tools</h3>
+                    <p>Warnings, kicks, bans, mutes and role management</p>
+                </div>
             </div>
-            <div class="feature">
-                <span class="feature-icon">🔒</span>
-                <h3>Security Guard</h3>
-                <p>Real-time monitoring & threat detection</p>
+            
+            <div class="bot-nav">
+                <a href="denzy-terms.html">📋 Denzy Terms</a>
+                <a href="denzy-privacy.html">🔒 Denzy Privacy</a>
             </div>
         </div>
         
-        <div class="nav">
-            <a href="terms-of-service.html">📋 Terms of Service</a>
-            <a href="privacy-policy.html">🔒 Privacy Policy</a>
+        <!-- Denzy Music Bot Section -->
+        <div class="bot-section">
+            <div class="bot-header">
+                <div class="bot-logo">🎵 Denzy Music</div>
+                <div class="bot-subtitle">Premium Music Streaming Bot</div>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">🎵</span>
+                    <h3>Multi-Platform Streaming</h3>
+                    <p>YouTube, Spotify, SoundCloud with HD audio quality</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎧</span>
+                    <h3>Audio Effects</h3>
+                    <p>Bass boost, nightcore, 8D audio and custom filters</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📋</span>
+                    <h3>Playlist Management</h3>
+                    <p>Create, save and share unlimited music playlists</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎚️</span>
+                    <h3>Advanced Controls</h3>
+                    <p>Queue management, loop modes and volume control</p>
+                </div>
+            </div>
+            
+            <div class="bot-nav">
+                <a href="terms-of-service.html">📋 Music Terms</a>
+                <a href="privacy-policy.html">🔒 Music Privacy</a>
+            </div>
         </div>
+        
         
         <div class="footer">
-            © 2025 Denzy Music Bot. All rights reserved.
+            © 2025 Denzy Ecosystem. All rights reserved.
         </div>
     </div>
 </body>

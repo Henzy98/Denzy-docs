@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Denzy Music Bot</title>
+    <title>Privacy Policy - Denzy Bot</title>
     <style>
         * {
             margin: 0;
@@ -36,6 +36,15 @@
             }
         }
         
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
         .container {
             max-width: 900px;
             margin: 30px auto;
@@ -65,6 +74,7 @@
             padding-bottom: 15px;
             margin: 40px 0 20px 0;
             transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out;
         }
         
         h2:hover {
@@ -120,6 +130,23 @@
             box-shadow: 0 8px 20px rgba(88, 101, 242, 0.3);
         }
         
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #5865F2;
+            animation: fadeIn 1s ease-out;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .highlight-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.2);
+            border-left-width: 6px;
+        }
+        
         .collapsible {
             background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
             color: #333;
@@ -167,7 +194,7 @@
         }
         
         .content.active {
-            max-height: 800px;
+            max-height: 500px;
             padding: 20px;
         }
         
@@ -207,113 +234,125 @@
             transition: width 0.3s ease;
             z-index: 1000;
         }
-        
-        .warning-box {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-            border: 1px solid #ffc107;
-            border-left: 4px solid #ff6b35;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
-            animation: fadeIn 1s ease-out;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-btn">← Back to Denzy Music</a>
-        <h1>📋 Terms of Service</h1>
+        <a href="index.html" class="back-btn">← Back to Denzy Ecosystem</a>
+        <h1>🔒 Denzy Bot - Privacy Policy</h1>
         <p><strong>Effective Date:</strong> August 30, 2025</p>
 
-        <button class="collapsible">1. Acceptance of Terms ✅</button>
+        <button class="collapsible">1. Information We Collect 📊</button>
         <div class="content">
-            <p>By using the Denzy Music Discord bot ("the Bot"), you agree to these Terms of Service.</p>
-        </div>
-
-        <button class="collapsible">2. Description of Service 🎵</button>
-        <div class="content">
-            <p>The Bot provides comprehensive Discord server management services, including:</p>
+            <p>Denzy Bot may collect and store:</p>
             <ul>
-                <li><strong>Music Services:</strong> Playing music from YouTube and Spotify, audio effects, playlist management</li>
-                <li><strong>Moderation Tools:</strong> Message filtering, user warnings, kicks, bans, mute/unmute functions</li>
-                <li><strong>Server Protection:</strong> Anti-spam, anti-raid, verification systems, role management</li>
-                <li><strong>Utility Features:</strong> Server statistics, logging, automated responses</li>
-                <li><strong>Guard Functions:</strong> Real-time monitoring, suspicious activity detection</li>
+                <li>Discord user IDs (for tickets, moderation records, and settings)</li>
+                <li>Server IDs (for configuration and security settings)</li>
+                <li>Ticket conversations and metadata</li>
+                <li>Moderation logs (warnings, kicks, bans, mutes)</li>
+                <li>Message content for moderation filtering (temporarily)</li>
+                <li>User join/leave timestamps for security monitoring</li>
+                <li>Server activity logs for audit purposes</li>
+                <li>Guard system detection data</li>
+                <li>Server configuration data (roles, channels, permissions)</li>
             </ul>
         </div>
 
-        <button class="collapsible">3. User Responsibilities 👤</button>
+        <button class="collapsible">2. How We Use Information 🎯</button>
         <div class="content">
+            <p>Information is used to:</p>
             <ul>
-                <li>Use the Bot in compliance with Discord's Terms of Service</li>
-                <li>Do not abuse or spam Bot commands</li>
-                <li>Respect copyright laws when playing music</li>
-                <li>Follow server rules and moderation decisions</li>
-                <li>Do not attempt to bypass security or moderation features</li>
-                <li>Report bugs or security issues responsibly</li>
-                <li>Do not use the Bot for illegal activities or harassment</li>
+                <li>Provide ticket system functionality</li>
+                <li>Enforce server moderation and security rules</li>
+                <li>Detect and prevent spam, raids, and malicious activity</li>
+                <li>Maintain comprehensive server logs and audit trails</li>
+                <li>Configure server-specific settings and permissions</li>
+                <li>Improve Bot security and protection features</li>
+                <li>Generate server activity reports</li>
+                <li>Support moderation appeals and reviews</li>
             </ul>
         </div>
 
-        <button class="collapsible">4. Limitations ⚠️</button>
-        <div class="content">
-            <div class="warning-box">
-                <ul>
-                    <li>The Bot is provided "as is" without warranties</li>
-                    <li>Service availability is not guaranteed</li>
-                    <li>We reserve the right to modify or discontinue the service</li>
-                </ul>
-            </div>
-        </div>
-
-        <button class="collapsible">5. Privacy 🔒</button>
+        <button class="collapsible">3. Data Storage 💾</button>
         <div class="content">
             <ul>
-                <li>The Bot may store minimal data for functionality (playlists, settings)</li>
-                <li>No personal data is sold or shared with third parties</li>
-                <li>See our <a href="privacy-policy.html" style="color: #5865F2; text-decoration: none; font-weight: 600;">Privacy Policy</a> for details</li>
+                <li>Data is stored securely in MongoDB databases</li>
+                <li>No personal information (names, emails) is collected</li>
+                <li>Only functional data necessary for Bot operation</li>
+                <li>Ticket data is encrypted and access-controlled</li>
+                <li>Logs are stored with appropriate retention policies</li>
             </ul>
         </div>
 
-        <button class="collapsible">6. Prohibited Uses 🚫</button>
+        <button class="collapsible">4. Data Sharing 🚫</button>
         <div class="content">
-            <div class="warning-box">
-                <ul>
-                    <li>Spamming commands or attempting to overload the Bot</li>
-                    <li>Attempting to break, exploit, or reverse-engineer the Bot</li>
-                    <li>Using the Bot to violate Discord's Terms of Service</li>
-                    <li>Bypassing moderation actions or security measures</li>
-                    <li>Using the Bot for harassment, hate speech, or illegal content</li>
-                    <li>Attempting to gain unauthorized access to server data</li>
-                    <li>Distributing malicious content through Bot features</li>
-                    <li>Creating fake accounts to evade bans or restrictions</li>
-                    <li>Using the Bot to raid or attack other Discord servers</li>
-                </ul>
-            </div>
-        </div>
-
-        <button class="collapsible">7. Moderation and Enforcement 🛡️</button>
-        <div class="content">
+            <p>We do NOT:</p>
             <ul>
-                <li>Server administrators have full control over Bot usage in their servers</li>
-                <li>Moderation actions are logged for transparency and appeals</li>
-                <li>Repeated violations may result in Bot access restrictions</li>
-                <li>We cooperate with Discord's Trust & Safety team when required</li>
+                <li>Sell user data to third parties</li>
+                <li>Share personal information</li>
+                <li>Use data for advertising purposes</li>
+                <li>Share ticket conversations outside the server</li>
+                <li>Provide logs to unauthorized parties</li>
             </ul>
         </div>
 
-        <button class="collapsible">8. Changes to Terms 📝</button>
+        <button class="collapsible">5. Data Retention ⏰</button>
         <div class="content">
-            <p>We reserve the right to modify these terms at any time.</p>
+            <ul>
+                <li>Ticket data is retained until manually deleted by server admins</li>
+                <li>Moderation logs are kept for 180 days for audit purposes</li>
+                <li>Security logs are retained for 90 days</li>
+                <li>Server activity logs are kept for 60 days maximum</li>
+                <li>Guard system data is retained for 30 days</li>
+                <li>Inactive server data may be automatically removed after 12 months</li>
+            </ul>
         </div>
 
-        <button class="collapsible">9. Contact 📧</button>
+        <button class="collapsible">6. User Rights ⚖️</button>
         <div class="content">
-            <p>For questions about these terms, contact: <strong>henzy@example.com</strong></p>
+            <p>You can:</p>
+            <ul>
+                <li>Request ticket data deletion through server administrators</li>
+                <li>Appeal moderation actions through proper channels</li>
+                <li>Request complete data deletion by contacting us</li>
+                <li>Access your moderation history (where permitted)</li>
+                <li>Stop using the Bot at any time</li>
+                <li>Request server log data (server admins only)</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">7. Third-Party Services 🔗</button>
+        <div class="content">
+            <p>Denzy Bot uses:</p>
+            <ul>
+                <li>Discord API (subject to Discord's privacy policy)</li>
+                <li>MongoDB Atlas (for secure data storage)</li>
+                <li>External security APIs (for threat detection)</li>
+            </ul>
+        </div>
+
+        <h2>8. Security</h2>
+        <div class="highlight-box">
+            <p>We implement industry-standard security measures to protect your data, including encrypted storage, secure API connections, regular security audits, and access controls for sensitive ticket and log data.</p>
+        </div>
+
+        <button class="collapsible">9. Children's Privacy 👶</button>
+        <div class="content">
+            <p>The Bot is not intended for users under 13 years old.</p>
+        </div>
+
+        <button class="collapsible">10. Changes to Privacy Policy 📝</button>
+        <div class="content">
+            <p>We may update this policy and will notify server administrators of significant changes.</p>
+        </div>
+
+        <button class="collapsible">11. Contact 📧</button>
+        <div class="content">
+            <p>For questions about this privacy policy, contact: <strong>henzy@example.com</strong></p>
         </div>
 
         <div class="footer">
-            <p>© 2025 Denzy Music Bot. All rights reserved.</p>
+            <p>© 2025 Denzy Bot. All rights reserved.</p>
             <p>Last updated: August 30, 2025</p>
         </div>
     </div>
@@ -371,22 +410,6 @@
             document.querySelectorAll('h2, .collapsible').forEach((el) => {
                 observer.observe(el);
             });
-            
-            // Add typing effect to title
-            const title = document.querySelector('h1');
-            const originalText = title.textContent;
-            title.textContent = '';
-            let i = 0;
-            
-            function typeWriter() {
-                if (i < originalText.length) {
-                    title.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                }
-            }
-            
-            setTimeout(typeWriter, 500);
         });
     </script>
 </body>
