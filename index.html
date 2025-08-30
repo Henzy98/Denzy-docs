@@ -3,62 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Bot - Documentation</title>
+    <title>Denzy Music - Documentation</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%, #f093fb 100%);
             color: #333;
             min-height: 100vh;
+            overflow-x: hidden;
+            animation: backgroundShift 10s ease-in-out infinite;
         }
+        
+        @keyframes backgroundShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+            50% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 20px 60px rgba(88, 101, 242, 0.3); }
+            50% { box-shadow: 0 25px 80px rgba(153, 50, 204, 0.5); }
+        }
+        
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 700px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 60px;
+            border-radius: 25px;
             text-align: center;
+            animation: slideUp 1s ease-out, glow 3s ease-in-out infinite;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        h1 { color: #5865F2; margin-bottom: 30px; }
+        
+        .logo {
+            font-size: 4em;
+            background: linear-gradient(45deg, #5865F2, #9932CC, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(88, 101, 242, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 50px;
+            animation: slideUp 1s ease-out 0.3s both;
+            font-weight: 300;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+            animation: slideUp 1s ease-out 0.6s both;
+        }
+        
+        .feature {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            padding: 30px 20px;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.6s;
+        }
+        
+        .feature:hover::before {
+            left: 100%;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #5865F2;
+            box-shadow: 0 15px 40px rgba(88, 101, 242, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .feature h3 {
+            color: #5865F2;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .nav {
+            margin: 50px 0;
+            animation: slideUp 1s ease-out 0.9s both;
+        }
+        
         .nav a {
             display: inline-block;
             margin: 15px;
-            padding: 15px 30px;
-            background: #5865F2;
+            padding: 18px 35px;
+            background: linear-gradient(135deg, #5865F2 0%, #9932CC 100%);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s;
-            font-weight: bold;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .nav a:hover { background: #4752C4; }
-        .description {
-            margin: 30px 0;
-            color: #666;
-            font-size: 18px;
+        
+        .nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav a:hover::before {
+            left: 100%;
+        }
+        
+        .nav a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9em;
+            animation: slideUp 1s ease-out 1.2s both;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 40px 30px;
+            }
+            .logo {
+                font-size: 2.5em;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎵 Discord Bot Documentation</h1>
+        <div class="logo">🎵 Denzy Music</div>
         
-        <div class="description">
-            Multi-purpose Discord bot with music, moderation, and security features
+        <div class="subtitle">
+            Premium Discord Bot - Music, Moderation & Security
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🎵</span>
+                <h3>Music Streaming</h3>
+                <p>High-quality music from YouTube & Spotify</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🛡️</span>
+                <h3>Server Protection</h3>
+                <p>Advanced moderation & anti-raid systems</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <h3>Security Guard</h3>
+                <p>Real-time monitoring & threat detection</p>
+            </div>
         </div>
         
         <div class="nav">
-            <a href="terms-of-service.html">Terms of Service</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">📋 Terms of Service</a>
+            <a href="privacy-policy.html">🔒 Privacy Policy</a>
         </div>
         
-        <p style="margin-top: 40px; color: #666;">
-            © 2025 Discord Bot. All rights reserved.
-        </p>
+        <div class="footer">
+            © 2025 Denzy Music Bot. All rights reserved.
+        </div>
     </div>
 </body>
 </html>

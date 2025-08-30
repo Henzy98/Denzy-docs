@@ -3,39 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Discord Bot</title>
+    <title>Terms of Service - Denzy Music Bot</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background: #f5f6fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
+            min-height: 100vh;
+            animation: backgroundShift 15s ease-in-out infinite;
         }
+        
+        @keyframes backgroundShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+            50% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            animation: slideUp 0.8s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        h1 { color: #5865F2; text-align: center; margin-bottom: 30px; }
-        h2 { color: #4752C4; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-top: 30px; }
-        ul { padding-left: 20px; }
-        li { margin: 8px 0; }
-        strong { color: #5865F2; }
-        .footer { text-align: center; margin-top: 40px; color: #666; font-style: italic; }
+        
+        h1 {
+            color: #5865F2;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #5865F2, #9932CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            color: #4752C4;
+            border-bottom: 3px solid #f0f0f0;
+            padding-bottom: 15px;
+            margin: 40px 0 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        h2:hover {
+            border-bottom-color: #5865F2;
+            transform: translateX(5px);
+        }
+        
+        ul {
+            padding-left: 25px;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        li {
+            margin: 12px 0;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+        }
+        
+        li:hover {
+            color: #5865F2;
+            transform: translateX(5px);
+        }
+        
+        strong {
+            color: #5865F2;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+            border-top: 2px solid #f0f0f0;
+            animation: slideUp 1s ease-out 0.5s both;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #5865F2, #9932CC);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(88, 101, 242, 0.3);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Terms of Service</h1>
+        <a href="index.html" class="back-btn">← Back to Denzy Music</a>
+        <h1>📋 Terms of Service</h1>
         <p><strong>Effective Date:</strong> August 30, 2025</p>
 
         <h2>1. Acceptance of Terms</h2>
-        <p>By using this Discord bot ("the Bot"), you agree to these Terms of Service.</p>
+        <p>By using the Denzy Music Discord bot ("the Bot"), you agree to these Terms of Service.</p>
 
         <h2>2. Description of Service</h2>
         <p>The Bot provides comprehensive Discord server management services, including:</p>
@@ -100,6 +193,7 @@
         <p>For questions about these terms, contact: henzy@example.com</p>
 
         <div class="footer">
+            <p>© 2025 Denzy Music Bot. All rights reserved.</p>
             <p>Last updated: August 30, 2025</p>
         </div>
     </div>
