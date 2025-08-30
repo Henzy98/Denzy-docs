@@ -241,7 +241,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #f0f0f0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -250,15 +250,16 @@
         
         .loader-content {
             text-align: center;
+            color: white;
         }
         
         .spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #5865F2;
+            width: 50px; height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
             animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
         }
         
         @keyframes spin {
@@ -275,8 +276,8 @@
     <div class="loader" id="loader">
         <div class="loader-content">
             <div class="spinner"></div>
-            <h3>🔒 Privacy Policy</h3>
-            <p>Loading content...</p>
+            <h3>🤖 Denzy Ecosystem</h3>
+            <p>Loading documentation...</p>
         </div>
     </div>
     
