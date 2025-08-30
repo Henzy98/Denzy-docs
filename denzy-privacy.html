@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Denzy Bot</title>
     <style>
+        .loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        .loader-content { text-align: center; }
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #5865F2;
+            border-radius: 50%;
+            width: 60px; height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #app { display: none; }
         * {
             margin: 0;
             padding: 0;
@@ -237,8 +260,20 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-btn">← Back to Denzy Ecosystem</a>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h3>🔒 Denzy Privacy</h3>
+            <p>Loading content...</p>
+        </div>
+    </div>
+    
+    <div id="app"></div>
+    
+    <script>
+        const content = {
+            main: `<div class="container">
+        <a href="dynamic-index.html" class="back-btn">← Back to Denzy Ecosystem</a>
         <h1>🔒 Denzy Bot - Privacy Policy</h1>
         <p><strong>Effective Date:</strong> August 30, 2025</p>
 
@@ -252,8 +287,7 @@
                 <li>Moderation logs (warnings, kicks, bans, mutes)</li>
                 <li>Message content for moderation filtering (temporarily)</li>
                 <li>User join/leave timestamps for security monitoring</li>
-                <li>Server activity logs for audit purposes</li>
-                <li>Guard system detection data</li>
+                <li>Command usage statistics (anonymous)</li>
                 <li>Server configuration data (roles, channels, permissions)</li>
             </ul>
         </div>
@@ -262,25 +296,24 @@
         <div class="content">
             <p>Information is used to:</p>
             <ul>
-                <li>Provide ticket system functionality</li>
-                <li>Enforce server moderation and security rules</li>
+                <li>Provide server moderation and security features</li>
+                <li>Manage support tickets and user inquiries</li>
+                <li>Enforce server rules and maintain order</li>
                 <li>Detect and prevent spam, raids, and malicious activity</li>
-                <li>Maintain comprehensive server logs and audit trails</li>
+                <li>Maintain audit trails for accountability</li>
                 <li>Configure server-specific settings and permissions</li>
-                <li>Improve Bot security and protection features</li>
-                <li>Generate server activity reports</li>
-                <li>Support moderation appeals and reviews</li>
+                <li>Improve Bot performance and security features</li>
+                <li>Generate anonymous usage statistics</li>
             </ul>
         </div>
 
         <button class="collapsible">3. Data Storage 💾</button>
         <div class="content">
             <ul>
-                <li>Data is stored securely in MongoDB databases</li>
-                <li>No personal information (names, emails) is collected</li>
-                <li>Only functional data necessary for Bot operation</li>
-                <li>Ticket data is encrypted and access-controlled</li>
-                <li>Logs are stored with appropriate retention policies</li>
+                <li>Data is stored securely in encrypted databases</li>
+                <li>No personal information (names, emails) is collected beyond Discord data</li>
+                <li>Only functional data necessary for Bot operation is retained</li>
+                <li>Strict access controls limit who can view stored data</li>
             </ul>
         </div>
 
@@ -289,80 +322,97 @@
             <p>We do NOT:</p>
             <ul>
                 <li>Sell user data to third parties</li>
-                <li>Share personal information</li>
-                <li>Use data for advertising purposes</li>
-                <li>Share ticket conversations outside the server</li>
-                <li>Provide logs to unauthorized parties</li>
+                <li>Share personal information outside necessary operations</li>
+                <li>Use data for advertising or marketing purposes</li>
+                <li>Store message content permanently (only for active moderation)</li>
+                <li>Share data with law enforcement without proper legal process</li>
             </ul>
         </div>
 
         <button class="collapsible">5. Data Retention ⏰</button>
         <div class="content">
             <ul>
-                <li>Ticket data is retained until manually deleted by server admins</li>
-                <li>Moderation logs are kept for 180 days for audit purposes</li>
-                <li>Security logs are retained for 90 days</li>
-                <li>Server activity logs are kept for 60 days maximum</li>
-                <li>Guard system data is retained for 30 days</li>
-                <li>Inactive server data may be automatically removed after 12 months</li>
+                <li>Ticket data: Retained for 6 months after closure</li>
+                <li>Moderation logs: Retained for 90 days for audit purposes</li>
+                <li>Configuration data: Retained while Bot is in server</li>
+                <li>Security logs: Retained for 30 days</li>
+                <li>Temporary moderation data: Deleted within 24 hours</li>
+                <li>User settings: Retained until manually deleted or Bot removal</li>
             </ul>
         </div>
 
-        <button class="collapsible">6. User Rights ⚖️</button>
+        <button class="collapsible">6. User Rights 👤</button>
         <div class="content">
-            <p>You can:</p>
+            <p>You have the right to:</p>
             <ul>
-                <li>Request ticket data deletion through server administrators</li>
-                <li>Appeal moderation actions through proper channels</li>
-                <li>Request complete data deletion by contacting us</li>
-                <li>Access your moderation history (where permitted)</li>
-                <li>Stop using the Bot at any time</li>
-                <li>Request server log data (server admins only)</li>
+                <li>Request deletion of your data (subject to moderation record requirements)</li>
+                <li>Access information we have stored about you</li>
+                <li>Correct inaccurate information</li>
+                <li>Opt-out of non-essential data collection</li>
+                <li>Report privacy concerns or violations</li>
+                <li>Appeal moderation decisions and data usage</li>
             </ul>
         </div>
 
-        <button class="collapsible">7. Third-Party Services 🔗</button>
+        <button class="collapsible">7. Security Measures 🔐</button>
         <div class="content">
-            <p>Denzy Bot uses:</p>
+            <ul>
+                <li>All data is encrypted in transit and at rest</li>
+                <li>Multi-factor authentication required for admin access</li>
+                <li>Regular security audits and penetration testing</li>
+                <li>Incident response procedures for data breaches</li>
+                <li>Limited access on need-to-know basis</li>
+                <li>Secure backup and recovery procedures</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">8. Third-Party Services 🔗</button>
+        <div class="content">
+            <p>The Bot integrates with:</p>
             <ul>
                 <li>Discord API (subject to Discord's privacy policy)</li>
-                <li>MongoDB Atlas (for secure data storage)</li>
-                <li>External security APIs (for threat detection)</li>
+                <li>Database hosting services (with data processing agreements)</li>
+                <li>Logging and monitoring services (anonymized data only)</li>
             </ul>
-        </div>
-
-        <h2>8. Security</h2>
-        <div class="highlight-box">
-            <p>We implement industry-standard security measures to protect your data, including encrypted storage, secure API connections, regular security audits, and access controls for sensitive ticket and log data.</p>
+            <p>These services have their own privacy policies and data handling practices.</p>
         </div>
 
         <button class="collapsible">9. Children's Privacy 👶</button>
         <div class="content">
-            <p>The Bot is not intended for users under 13 years old.</p>
+            <p>The Bot is not intended for users under 13 years old. We do not knowingly collect information from children under 13. If we become aware of such collection, we will delete the information immediately.</p>
         </div>
 
         <button class="collapsible">10. Changes to Privacy Policy 📝</button>
         <div class="content">
-            <p>We may update this policy and will notify server administrators of significant changes.</p>
+            <p>We may update this Privacy Policy to reflect changes in our practices or legal requirements. Users will be notified of significant changes through Discord announcements.</p>
         </div>
 
-        <button class="collapsible">11. Contact 📧</button>
+        <button class="collapsible">11. Contact Information 📧</button>
         <div class="content">
-            <p>For questions about this privacy policy, contact: <strong>henzy1938@gmail.com</strong></p>
+            <p>For privacy-related questions, data requests, or concerns:</p>
+            <ul>
+                <li>Email: <strong>henzy1938@gmail.com</strong></li>
+                <li>Discord: Join our support server for assistance</li>
+                <li>Response time: Within 72 hours for privacy requests</li>
+            </ul>
         </div>
 
         <div class="footer">
-            <p>© 2025 Denzy Bot. All rights reserved.</p>
-            <p>Last updated: August 30, 2025</p>
+            <p> 2025 Denzy Bot. All rights reserved.</p>
+            <p>This privacy policy is effective as of August 30, 2025</p>
         </div>
     </div>
     
     <div class="progress-bar" id="progressBar"></div>
-    <button class="scroll-to-top" id="scrollToTop">↑</button>
-    
-    <script>
-        // Collapsible functionality
-        document.addEventListener('DOMContentLoaded', function() {
+    <button class="scroll-to-top" id="scrollToTop">↑</button>`
+        };
+        
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            const app = document.getElementById('app');
+            app.innerHTML = content.main;
+            app.style.display = 'block';
+            
             const collapsibles = document.getElementsByClassName('collapsible');
             
             for (let i = 0; i < collapsibles.length; i++) {
@@ -373,7 +423,6 @@
                 });
             }
             
-            // Scroll to top button
             const scrollToTopBtn = document.getElementById('scrollToTop');
             const progressBar = document.getElementById('progressBar');
             
@@ -398,7 +447,6 @@
                 });
             });
             
-            // Add smooth scroll animation to sections
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -410,7 +458,19 @@
             document.querySelectorAll('h2, .collapsible').forEach((el) => {
                 observer.observe(el);
             });
+        }, 800);
+        
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                return false;
+            }
         });
+        
+        console.clear();
+        console.log('%cDUR!', 'color: red; font-size: 50px; font-weight: bold;');
+        console.log('%cBu bir güvenlik özelliğidir. Kod çalıştırmayın!', 'color: red; font-size: 16px;');
     </script>
 </body>
 </html>

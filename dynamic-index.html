@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denzy Ecosystem - Documentation</title>
+    <meta name="description" content="Denzy ve Denzy Music Discord botları için resmi dokümantasyon">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+        .spinner {
+            width: 50px; height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #app { display: none; }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h3>🤖 Denzy Ecosystem</h3>
+            <p>Loading documentation...</p>
+        </div>
+    </div>
+    
+    <div id="app"></div>
+    
+    <script>
+        const _0x1a2b = ['🤖 Denzy Ecosystem', 'Two Powerful Discord Bots for Your Server'];
+        const _0x3c4d = ['🛡️ Denzy', 'Server Management & Moderation Bot'];
+        const _0x5e6f = ['🎵 Denzy Music', 'Premium Music Streaming Bot'];
+        
+        function _0x789a() {
+            return `<div class="container">
+                <div class="logo">${_0x1a2b[0]}</div>
+                <div class="subtitle">${_0x1a2b[1]}</div>
+                <div class="bot-section">
+                    <div class="bot-header">
+                        <div class="bot-logo">${_0x3c4d[0]}</div>
+                        <div class="bot-subtitle">${_0x3c4d[1]}</div>
+                    </div>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">🎫</span>
+                            <h3>Ticket System</h3>
+                            <p>Advanced support ticket management with categories</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🛡️</span>
+                            <h3>Guard Protection</h3>
+                            <p>Anti-raid, anti-spam and server security systems</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">📊</span>
+                            <h3>Logging System</h3>
+                            <p>Comprehensive server activity and audit logs</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⚖️</span>
+                            <h3>Moderation Tools</h3>
+                            <p>Warnings, kicks, bans, mutes and role management</p>
+                        </div>
+                    </div>
+                    <div class="bot-nav">
+                        <a href="denzy-terms.html">📋 Denzy Terms</a>
+                        <a href="denzy-privacy.html">🔒 Denzy Privacy</a>
+                    </div>
+                </div>
+                <div class="bot-section">
+                    <div class="bot-header">
+                        <div class="bot-logo">${_0x5e6f[0]}</div>
+                        <div class="bot-subtitle">${_0x5e6f[1]}</div>
+                    </div>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">🎵</span>
+                            <h3>Multi-Platform Streaming</h3>
+                            <p>YouTube, Spotify, SoundCloud with HD audio quality</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🎧</span>
+                            <h3>Audio Effects</h3>
+                            <p>Bass boost, nightcore, 8D audio and custom filters</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">📋</span>
+                            <h3>Playlist Management</h3>
+                            <p>Create, save and share unlimited music playlists</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🎚️</span>
+                            <h3>Advanced Controls</h3>
+                            <p>Queue management, loop modes and volume control</p>
+                        </div>
+                    </div>
+                    <div class="bot-nav">
+                        <a href="terms-of-service.html">📋 Music Terms</a>
+                        <a href="privacy-policy.html">🔒 Music Privacy</a>
+                    </div>
+                </div>
+                <div class="footer">© 2025 Denzy Ecosystem. All rights reserved.</div>
+            </div>`;
+        }
+        
+        const _0xabcd = `* { margin: 0; padding: 0; box-sizing: border-box; }
+            body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; min-height: 100vh; animation: backgroundShift 10s ease-in-out infinite; }
+            @keyframes backgroundShift { 0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } 50% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); } }
+            @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+            .container { max-width: 700px; margin: 50px auto; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 60px; border-radius: 25px; text-align: center; animation: slideUp 1s ease-out; border: 1px solid rgba(255, 255, 255, 0.2); }
+            .logo { font-size: 4em; background: linear-gradient(45deg, #5865F2, #9932CC, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+            .subtitle { font-size: 1.3em; color: #666; margin-bottom: 50px; font-weight: 300; }
+            .bot-section { margin: 60px 0; padding: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.2); }
+            .bot-header { text-align: center; margin-bottom: 40px; }
+            .bot-logo { font-size: 3em; background: linear-gradient(45deg, #5865F2, #9932CC, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; margin-bottom: 15px; animation: float 3s ease-in-out infinite; }
+            .bot-subtitle { font-size: 1.2em; color: #666; font-weight: 300; }
+            .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin: 40px 0; }
+            .feature { background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%); padding: 30px 20px; border-radius: 20px; transition: all 0.4s ease; border: 2px solid transparent; }
+            .feature:hover { transform: translateY(-10px) scale(1.02); border-color: #5865F2; box-shadow: 0 15px 40px rgba(88, 101, 242, 0.2); }
+            .feature-icon { font-size: 2.5em; margin-bottom: 15px; display: block; }
+            .feature h3 { color: #5865F2; margin-bottom: 10px; font-size: 1.1em; }
+            .bot-nav { text-align: center; margin-top: 30px; }
+            .bot-nav a { display: inline-block; margin: 10px 15px; padding: 15px 30px; background: linear-gradient(135deg, #5865F2 0%, #9932CC 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.4s ease; }
+            .bot-nav a:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4); }
+            .footer { margin-top: 50px; color: #888; font-size: 0.9em; }
+            @media (max-width: 768px) { .container { margin: 20px; padding: 40px 30px; } .logo { font-size: 2.5em; } .features { grid-template-columns: 1fr; } }`;
+        
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            const app = document.getElementById('app');
+            const style = document.createElement('style');
+            style.textContent = _0xabcd;
+            document.head.appendChild(style);
+            app.innerHTML = _0x789a();
+            app.style.display = 'block';
+        }, 800);
+        
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        console.clear();
+        console.log('%cDUR!', 'color: red; font-size: 50px; font-weight: bold;');
+        console.log('%cBu bir güvenlik özelliğidir. Kod çalıştırmayın!', 'color: red; font-size: 16px;');
+    </script>
+</body>
+</html>

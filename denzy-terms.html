@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Denzy Bot</title>
     <style>
+        .loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        .loader-content { text-align: center; }
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #5865F2;
+            border-radius: 50%;
+            width: 60px; height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #app { display: none; }
         * {
             margin: 0;
             padding: 0;
@@ -225,8 +248,20 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-btn">← Back to Denzy Ecosystem</a>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h3>🛡️ Denzy Terms</h3>
+            <p>Loading content...</p>
+        </div>
+    </div>
+    
+    <div id="app"></div>
+    
+    <script>
+        const content = {
+            main: `<div class="container">
+        <a href="dynamic-index.html" class="back-btn">← Back to Denzy Ecosystem</a>
         <h1>🛡️ Denzy Bot - Terms of Service</h1>
         <p><strong>Effective Date:</strong> August 30, 2025</p>
 
@@ -237,113 +272,101 @@
 
         <button class="collapsible">2. Description of Service 🛡️</button>
         <div class="content">
-            <p>Denzy provides comprehensive Discord server management services, including:</p>
+            <p>Denzy is a Discord bot that provides:</p>
             <ul>
-                <li><strong>Ticket System:</strong> Support ticket creation, management, and categorization</li>
-                <li><strong>Guard Protection:</strong> Anti-raid, anti-spam, verification systems</li>
-                <li><strong>Logging System:</strong> Message logs, member logs, server activity tracking</li>
-                <li><strong>Moderation Tools:</strong> Warnings, kicks, bans, mutes, role management</li>
-                <li><strong>Security Features:</strong> Auto-moderation, suspicious activity detection</li>
-                <li><strong>Server Management:</strong> Welcome messages, auto-roles, channel management</li>
+                <li>Server moderation and security features</li>
+                <li>Ticket system for user support</li>
+                <li>Anti-raid and anti-spam protection</li>
+                <li>Logging and audit trail capabilities</li>
+                <li>Role and permission management</li>
+                <li>Automated moderation tools</li>
             </ul>
         </div>
 
         <button class="collapsible">3. User Responsibilities 👤</button>
         <div class="content">
+            <p>Users must:</p>
             <ul>
-                <li>Use the Bot in compliance with Discord's Terms of Service</li>
-                <li>Do not abuse or spam Bot commands</li>
-                <li>Follow server rules and moderation decisions</li>
-                <li>Do not attempt to bypass security or moderation features</li>
-                <li>Report bugs or security issues responsibly</li>
-                <li>Do not use the Bot for illegal activities or harassment</li>
-                <li>Respect ticket system and use it appropriately</li>
-                <li>Do not attempt to exploit logging or guard systems</li>
+                <li>Comply with Discord's Terms of Service</li>
+                <li>Follow server rules and guidelines</li>
+                <li>Use moderation features responsibly</li>
+                <li>Not attempt to exploit or abuse the Bot</li>
+                <li>Report bugs and security issues appropriately</li>
+                <li>Respect other users' rights and privacy</li>
             </ul>
         </div>
 
-        <button class="collapsible">4. Limitations ⚠️</button>
+        <button class="collapsible">4. Prohibited Uses 🚫</button>
         <div class="content">
-            <div class="warning-box">
-                <ul>
-                    <li>The Bot is provided "as is" without warranties</li>
-                    <li>Service availability is not guaranteed</li>
-                    <li>We reserve the right to modify or discontinue the service</li>
-                    <li>Moderation decisions are final unless appealed through proper channels</li>
-                </ul>
-            </div>
-        </div>
-
-        <button class="collapsible">5. Privacy 🔒</button>
-        <div class="content">
+            <p>You may NOT:</p>
             <ul>
-                <li>The Bot stores data necessary for functionality (tickets, logs, settings)</li>
-                <li>No personal data is sold or shared with third parties</li>
-                <li>See our <a href="denzy-privacy.html" style="color: #5865F2; text-decoration: none; font-weight: 600;">Privacy Policy</a> for details</li>
+                <li>Use the Bot to harass or abuse other users</li>
+                <li>Attempt to bypass or disable security features</li>
+                <li>Use the Bot for illegal activities</li>
+                <li>Share or distribute Bot tokens or credentials</li>
+                <li>Reverse engineer or modify the Bot's code</li>
+                <li>Use the Bot to violate Discord's community guidelines</li>
             </ul>
         </div>
 
-        <button class="collapsible">6. Prohibited Uses 🚫</button>
+        <button class="collapsible">5. Data and Privacy 🔒</button>
         <div class="content">
-            <div class="warning-box">
-                <ul>
-                    <li>Spamming commands or attempting to overload the Bot</li>
-                    <li>Attempting to break, exploit, or reverse-engineer the Bot</li>
-                    <li>Using the Bot to violate Discord's Terms of Service</li>
-                    <li>Bypassing moderation actions or security measures</li>
-                    <li>Using the Bot for harassment, hate speech, or illegal content</li>
-                    <li>Attempting to gain unauthorized access to server data or logs</li>
-                    <li>Creating fake tickets or abusing the ticket system</li>
-                    <li>Attempting to manipulate or bypass guard protection systems</li>
-                    <li>Using the Bot to raid or attack other Discord servers</li>
-                </ul>
-            </div>
-        </div>
-
-        <button class="collapsible">7. Moderation and Enforcement 🛡️</button>
-        <div class="content">
+            <p>Please review our Privacy Policy for details on data handling.</p>
             <ul>
-                <li>Server administrators have full control over Bot usage in their servers</li>
-                <li>All moderation actions are logged for transparency and appeals</li>
-                <li>Repeated violations may result in Bot access restrictions</li>
-                <li>We cooperate with Discord's Trust & Safety team when required</li>
-                <li>Guard system actions are automated but can be appealed</li>
-                <li>Ticket system abuse may result in temporary restrictions</li>
+                <li>We collect minimal data for Bot functionality</li>
+                <li>Moderation logs are stored for security purposes</li>
+                <li>User data is protected and not shared with third parties</li>
+                <li>You can request data deletion at any time</li>
             </ul>
         </div>
 
-        <button class="collapsible">8. Data and Logging 📊</button>
+        <button class="collapsible">6. Service Availability 🌐</button>
         <div class="content">
             <ul>
-                <li>Server logs are maintained for security and audit purposes</li>
-                <li>Ticket conversations are stored until manually deleted</li>
-                <li>Moderation records are kept for appeal and review processes</li>
-                <li>Guard system data is used only for protection purposes</li>
+                <li>The Bot is provided "as is" without uptime guarantees</li>
+                <li>Maintenance may temporarily affect service</li>
+                <li>Features may be updated or modified</li>
+                <li>Access may be restricted for policy violations</li>
             </ul>
         </div>
 
-        <button class="collapsible">9. Changes to Terms 📝</button>
+        <button class="collapsible">7. Limitation of Liability ⚖️</button>
         <div class="content">
-            <p>We reserve the right to modify these terms at any time. Users will be notified of significant changes.</p>
+            <p>We are not liable for:</p>
+            <ul>
+                <li>Service interruptions or Bot downtime</li>
+                <li>Actions taken by server administrators</li>
+                <li>Data loss (though we implement safeguards)</li>
+                <li>Misuse of moderation features by server staff</li>
+            </ul>
         </div>
 
-        <button class="collapsible">10. Contact 📧</button>
+        <button class="collapsible">8. Changes to Terms 📝</button>
+        <div class="content">
+            <p>We reserve the right to modify these terms at any time.</p>
+        </div>
+
+        <button class="collapsible">9. Contact 📧</button>
         <div class="content">
             <p>For questions about these terms, contact: <strong>henzy1938@gmail.com</strong></p>
         </div>
 
         <div class="footer">
-            <p>© 2025 Denzy Bot. All rights reserved.</p>
+            <p> 2025 Denzy Bot. All rights reserved.</p>
             <p>Last updated: August 30, 2025</p>
         </div>
     </div>
     
     <div class="progress-bar" id="progressBar"></div>
-    <button class="scroll-to-top" id="scrollToTop">↑</button>
-    
-    <script>
-        // Collapsible functionality
-        document.addEventListener('DOMContentLoaded', function() {
+    <button class="scroll-to-top" id="scrollToTop">↑</button>`
+        };
+        
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            const app = document.getElementById('app');
+            app.innerHTML = content.main;
+            app.style.display = 'block';
+            
             const collapsibles = document.getElementsByClassName('collapsible');
             
             for (let i = 0; i < collapsibles.length; i++) {
@@ -354,7 +377,6 @@
                 });
             }
             
-            // Scroll to top button
             const scrollToTopBtn = document.getElementById('scrollToTop');
             const progressBar = document.getElementById('progressBar');
             
@@ -379,7 +401,6 @@
                 });
             });
             
-            // Add smooth scroll animation to sections
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -391,23 +412,19 @@
             document.querySelectorAll('h2, .collapsible').forEach((el) => {
                 observer.observe(el);
             });
-            
-            // Add typing effect to title
-            const title = document.querySelector('h1');
-            const originalText = title.textContent;
-            title.textContent = '';
-            let i = 0;
-            
-            function typeWriter() {
-                if (i < originalText.length) {
-                    title.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                }
+        }, 800);
+        
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                return false;
             }
-            
-            setTimeout(typeWriter, 500);
         });
+        
+        console.clear();
+        console.log('%cDUR!', 'color: red; font-size: 50px; font-weight: bold;');
+        console.log('%cBu bir güvenlik özelliğidir. Kod çalıştırmayın!', 'color: red; font-size: 16px;');
     </script>
 </body>
 </html>

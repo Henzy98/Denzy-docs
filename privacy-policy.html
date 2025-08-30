@@ -234,11 +234,58 @@
             transition: width 0.3s ease;
             z-index: 1000;
         }
+        
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #5865F2;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-btn">← Back to Denzy Ecosystem</a>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h3>🔒 Privacy Policy</h3>
+            <p>Loading content...</p>
+        </div>
+    </div>
+    
+    <div id="app"></div>
+    
+    <script>
+        const content = {
+            main: `<div class="container">
+        <a href="dynamic-index.html" class="back-btn">← Back to Denzy Ecosystem</a>
         <h1>🔒 Privacy Policy</h1>
         <p><strong>Effective Date:</strong> August 30, 2025</p>
 
@@ -348,14 +395,15 @@
             <p>© 2025 Denzy Music Bot. All rights reserved.</p>
             <p>Last updated: August 30, 2025</p>
         </div>
-    </div>
-    
-    <div class="progress-bar" id="progressBar"></div>
-    <button class="scroll-to-top" id="scrollToTop">↑</button>
-    
-    <script>
-        // Collapsible functionality
-        document.addEventListener('DOMContentLoaded', function() {
+    </div>`
+        };
+        
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            const app = document.getElementById('app');
+            app.innerHTML = content.main;
+            app.style.display = 'block';
+            
             const collapsibles = document.getElementsByClassName('collapsible');
             
             for (let i = 0; i < collapsibles.length; i++) {
@@ -366,7 +414,6 @@
                 });
             }
             
-            // Scroll to top button
             const scrollToTopBtn = document.getElementById('scrollToTop');
             const progressBar = document.getElementById('progressBar');
             
@@ -391,7 +438,6 @@
                 });
             });
             
-            // Add smooth scroll animation to sections
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -403,7 +449,22 @@
             document.querySelectorAll('h2, .collapsible').forEach((el) => {
                 observer.observe(el);
             });
+        }, 800);
+        
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                return false;
+            }
         });
+        
+        console.clear();
+        console.log('%cDUR!', 'color: red; font-size: 50px; font-weight: bold;');
+        console.log('%cBu bir güvenlik özelliğidir. Kod çalıştırmayın!', 'color: red; font-size: 16px;');
     </script>
+    
+    <div class="progress-bar" id="progressBar"></div>
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
 </body>
 </html>
